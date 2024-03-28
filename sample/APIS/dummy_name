@@ -1,12 +1,12 @@
 {
-  "cts" : 1711602231585,
+  "cts" : 1711618985963,
   "createdUserName" : "Elise Barnes",
   "modifiedUserName" : "Elise Barnes",
-  "mts" : 1711602231585,
+  "mts" : 1711618985963,
   "createdBy" : "6036857c38e56d398c70be85",
   "modifiedBy" : "6036857c38e56d398c70be85",
   "proxyId" : "6602a12b03de83581bfd6acd",
-  "revision" : 2,
+  "revision" : 7,
   "name" : "dummy_name",
   "description" : "dummy_description",
   "apiType" : "RESTAPI",
@@ -19,7 +19,7 @@
   "vertexHashMap" : { },
   "statusHistory" : [ {
     "status" : "Draft",
-    "cts" : 1711602231585,
+    "cts" : 1711618985963,
     "lastModifiedBy" : "Elise Barnes",
     "description" : "Created new proxy"
   } ],
