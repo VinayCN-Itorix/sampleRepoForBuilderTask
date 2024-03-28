@@ -1,0 +1,29 @@
+{
+  "cts" : 1711601501160,
+  "createdUserName" : "Elise Barnes",
+  "modifiedUserName" : "Elise Barnes",
+  "mts" : 1711601501160,
+  "createdBy" : "6036857c38e56d398c70be85",
+  "modifiedBy" : "6036857c38e56d398c70be85",
+  "proxyId" : "6602a12b03de83581bfd6acd",
+  "revision" : 2,
+  "name" : "dummy_name",
+  "description" : "dummy_description",
+  "apiType" : "RESTAPI",
+  "apiMethod" : "GET",
+  "path" : "/dummy/path",
+  "pathArray" : [ "dummy", "path" ],
+  "environmentId" : "dummy_environment_id",
+  "revisionStatus" : "DRAFT",
+  "edgeSet" : [ ],
+  "vertexHashMap" : { },
+  "statusHistory" : [ {
+    "status" : "Draft",
+    "cts" : 1711601501160,
+    "lastModifiedBy" : "Elise Barnes",
+    "description" : "Created new proxy"
+  } ],
+  "domain" : "dummy_domain",
+  "certificateId" : "dummy_certificate_id",
+  "deployed" : false
+}
