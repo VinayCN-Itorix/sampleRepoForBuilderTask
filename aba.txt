@@ -1,0 +1,165 @@
+server {
+    listen       80;
+    listen  [::]:80;
+    server_name  host.docker.internal;
+
+    #access_log  /var/log/nginx/host.access.log  main;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+ 
+    location ^~ /itorix {
+        proxy_pass http://host.docker.internal:9030;
+    }
+
+    location /v1/astrum {
+        proxy_pass http://host.docker.internal:8999/v1/astrum;
+    }
+
+    location /core-ui {
+        proxy_pass http://host.docker.internal:9090/itorix/v1/core;
+    }
+
+# ;     location /itorix/v1/monitor {
+# ;         proxy_pass http://host.docker.internal:9010/itorix/v1/monitor;
+# ;     }
+
+# ;     location /v1/inspector/agent {
+# ;         proxy_pass http://host.docker.internal:9002/v1/inspector/agent;
+# ;     }
+
+# ;     location /v1/compliance/scanner {
+# ;         proxy_pass http://host.docker.internal:9080/v1/compliance/scanner;
+# ;     }
+
+# ;     location ^~ /itorix/v1/testsuites {
+# ;         proxy_pass http://host.docker.internal:9070/itorix/v1/testsuites;
+# ;     }
+
+# ;     location ^~ /itorix/v1/mock {
+# ;         proxy_pass http://host.docker.internal:9020/itorix/v1/mock;
+# ;     }
+
+# ;     location ^~ /itorix/v1/consents {
+# ;         proxy_pass http://host.docker.internal:9030/itorix/v1/consents;
+# ;     }
+
+# ;     location /v1/compliance/reports {
+# ;         proxy_pass http://host.docker.internal:9088/v1/compliance/reports;
+# ;     }
+
+# ;     location /v1/kong {
+# ;         proxy_pass http://host.docker.internal:9045/v1/kong;
+# ;     }
+    location /v1/portfolio-management {
+        proxy_pass http://host.docker.internal:9100/v1/portfolio-management;
+    }
+
+    location /monitor-agent {
+        proxy_pass http://host.docker.internal:9035;
+    }
+
+    location /linter-agent {
+        proxy_pass http://host.docker.internal:9032;
+    }
+
+    location /consent-agent {
+        proxy_pass http://host.docker.internal:9029;
+    }
+
+    location /mock-agent {
+        proxy_pass http://host.docker.internal:9033;
+    }
+    location /api-runtime-agent-app {
+        proxy_pass http://host.docker.internal:9026;
+    }
+
+    location /notification-agent {
+        proxy_pass http://host.docker.internal:9038;
+    }
+
+    location /apiwiz-schedulers {
+        proxy_pass http://host.docker.internal:9028;
+    }
+
+    location /sso-api {
+       proxy_pass http://host.docker.internal:9039;
+    }
+
+    location /apiwiz-build-api-app {
+       proxy_pass http://host.docker.internal:9023;
+    }
+
+    location /apiwiz-build-agent-app {
+       proxy_pass http://host.docker.internal:9022;
+    }
+
+    location /apiwiz-runtime-api-app {
+       proxy_pass http://host.docker.internal:9027;
+    }
+
+    location /apiwiz-gw-connectors {
+       proxy_pass http://host.docker.internal:9025;
+    }
+
+    location /apiwiz-runtime-agent-app {
+        proxy_pass http://host.docker.internal:9026;
+    }
+
+    location /monetization-api {
+       proxy_pass http://host.docker.internal:9034;
+    }
+
+    location /v1/apiwiz-runtime-api/api-builder {
+       proxy_pass http://host.docker.internal:9021/v1/apiwiz-runtime-api/api-builder;
+    }
+
+    location /v1/license-api {
+      proxy_pass http://host.docker.internal:9031/v1/license-api;
+    }
+
+    location /v1/sync-api {
+      proxy_pass http://host.docker.internal:9040/v1/sync-api;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+    # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+    #
+    #location ~ \.php$ {
+    #    proxy_pass   http://127.0.0.1;
+    #}
+
+    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+    #
+    #location ~ \.php$ {
+    #    root           html;
+    #    fastcgi_pass   127.0.0.1:9000;
+    #    fastcgi_index  index.php;
+    #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+    #    include        fastcgi_params;
+    #}
+
+    # deny access to .htaccess files, if Apache's document root
+    # concurs with nginx's one
+    #
+    #location ~ /\.ht {
+    #    deny  all;
+    #}
+}
+
